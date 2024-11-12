@@ -31,26 +31,24 @@ function Heading() {
 }
 function SkillList() {
   return (
-    <ul className="skill-list">
-      <li className="skill" style={{ backgroundColor: "#e6ccb2" }}>
-        HTML+CSS 💪
-      </li>
-      <li className="skill" style={{ backgroundColor: "#e9edc9" }}>
-        JavaScript 💪
-      </li>
-      <li className="skill" style={{ backgroundColor: "#6096ba" }}>
-        Web Design 💪
-      </li>
-      <li className="skill" style={{ backgroundColor: "#84a98c" }}>
-        Git and GitHub 👍
-      </li>
-      <li className="skill" style={{ backgroundColor: "#ffb3c6" }}>
-        React 💪
-      </li>
-      <li className="skill" style={{ backgroundColor: "#778da9" }}>
-        TypeScript 👶
-      </li>
-    </ul>
+    <div className="skill-list">
+      <Skill skill="HTML+CSS" emoji="💪" color="#e6ccb2" />
+      <Skill skill="JavaScript" emoji="💪" color="#e9edc9" />
+      <Skill skill="React" emoji="💪" color="#6096ba" />
+      <Skill skill="Git and GitHub" emoji="👍" color="#84a98c" />
+      <Skill skill="NodeJs" emoji="💪" color="#ffb3c6" />
+      <Skill skill="TypeScript" emoji="👶" color="#778da9" />
+    </div>
+  );
+}
+
+function Skill(props) {
+  return (
+    <div className="skill" style={{ backgroundColor: props.color }}>
+      <h3>
+        {props.skill} {props.emoji}
+      </h3>
+    </div>
   );
 }
 const root = ReactDOM.createRoot(document.getElementById("root"));
